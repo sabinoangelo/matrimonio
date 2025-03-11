@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Nostro Matrimonio</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #f5f5f5;
+            --accent-color: #2E7D32;
+            --text-color: #333;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        
+        .date {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        
+        .countdown {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .detail-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .detail-card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        
+        .map {
+            height: 400px;
+            background-color: #e1e1e1;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .gallery-img {
+            height: 200px;
+            background-color: #e1e1e1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: var(--primary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .details {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header style="background-image: url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/img/placeholder.png'); background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(46, 125, 50, 0.7);"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1>Maria & Giuseppe</h1>
+            <p class="date">12 Giugno 2025</p>
+            <div class="countdown" id="countdown">Mancano: <span id="days">365</span> giorni</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="storia" style="background-image: url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/img/placeholder.png'); background-size: cover; background-position: center; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); border-radius: 10px;"></div>
+            <div style="position: relative; z-index: 1;">
+                <h2>La Nostra Storia</h2>
+                <p>Ci siamo incontrati nel 2019 durante una festa di amici comuni. Da quel momento è stato amore a prima vista. Dopo 5 anni di fidanzamento, abbiamo deciso di unirci in matrimonio e non vediamo l'ora di condividere questo momento speciale con tutti voi.</p>
+            </div>
+        </section>
+        
+        <section id="cerimonia">
+            <h2>Dettagli della Cerimonia</h2>
+            <div class="details">
+                <div class="detail-card">
+                    <h3>Cerimonia</h3>
+                    <p><strong>Data:</strong> 12 Giugno 2025</p>
+                    <p><strong>Ora:</strong> 16:00</p>
+                    <p><strong>Luogo:</strong> Chiesa Santa Maria, Via Roma 123, Milano</p>
+                </div>
+                
+                <div class="detail-card">
+                    <h3>Ricevimento</h3>
+                    <p><strong>Ora:</strong> 18:00</p>
+                    <p><strong>Luogo:</strong> Villa Bellezza, Via dei Fiori 45, Milano</p>
+                    <p><strong>Dress code:</strong> Elegante</p>
+                </div>
+            </div>
+            
+            <h3>Come Arrivare</h3>
+            <div class="map">
+                <p>Qui inserirò una mappa con le indicazioni</p>
+            </div>
+            
+            <div class="details">
+                <div class="detail-card">
+                    <h3>Parcheggio</h3>
+                    <p>Parcheggio disponibile presso Villa Bellezza. In alternativa, c'è un parcheggio pubblico a 200m dalla location.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <h3>Alloggi Consigliati</h3>
+                    <p><strong>Hotel Splendid:</strong> Via Luminosa 78, Milano - a 5 minuti dalla location</p>
+                    <p><strong>B&B La Rosa:</strong> Via dei Giardini 15, Milano - a 10 minuti dalla location</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="programma">
+            <h2>Programma della Giornata</h2>
+            <ul>
+                <li><strong>16:00</strong> - Cerimonia in chiesa</li>
+                <li><strong>17:30</strong> - Foto di gruppo</li>
+                <li><strong>18:00</strong> - Aperitivo di benvenuto</li>
+                <li><strong>19:30</strong> - Cena</li>
+                <li><strong>22:00</strong> - Taglio della torta</li>
+                <li><strong>22:30</strong> - Festa e balli</li>
+                <li><strong>01:00</strong> - Conclusione della serata</li>
+            </ul>
+        </section>
+        
+        <section id="lista-nozze">
+            <h2>Lista Nozze</h2>
+            <p>Il vostro affetto e la vostra presenza sono i regali più grandi per noi. Se desiderate comunque farci un regalo, abbiamo creato una lista nozze presso "Casa Felice" in Via dello Shopping 42, Milano.</p>
+            <p>In alternativa, potete contribuire al nostro viaggio di nozze con un bonifico utilizzando i seguenti dettagli:</p>
+            <p><strong>IBAN:</strong> IT12A0123456789000000000000</p>
+            <p><strong>Intestatari:</strong> Maria Rossi e Giuseppe Bianchi</p>
+            <p><strong>Causale:</strong> Regalo di nozze da [vostro nome]</p>
+        </section>
+        
+        <section id="galleria">
+            <h2>Le Nostre Foto</h2>
+            <div class="gallery">
+                <div class="gallery-img" style="background-image: url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/img/placeholder.png');"></div>
+                <div class="gallery-img" style="background-image: url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/img/placeholder.png');"></div>
+                <div class="gallery-img" style="background-image: url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/img/placeholder.png');"></div>
+                <div class="gallery-img" style="background-image: url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/img/placeholder.png');"></div>
+                <div class="gallery-img" style="background-image: url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/img/placeholder.png');"></div>
+                <div class="gallery-img" style="background-image: url('https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/img/placeholder.png');"></div>
+            </div>
+        </section>
+        
+        <section id="rsvp">
+            <h2>RSVP</h2>
+            <p>Vi preghiamo di confermare la vostra presenza entro il 12 Maggio 2025.</p>
+            <div class="rsvp-form">
+                <input type="text" placeholder="Nome e Cognome" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Telefono" required>
+                <select required>
+                    <option value="">Parteciperò?</option>
+                    <option value="yes">Sì, parteciperò</option>
+                    <option value="no">Mi dispiace, non potrò partecipare</option>
+                </select>
+                <input type="number" min="1" max="10" placeholder="Numero di persone" required>
+                <textarea placeholder="Eventuali intolleranze alimentari o richieste speciali"></textarea>
+                <button type="submit">Invia RSVP</button>
+            </div>
+        </section>
+        
+        <section id="contatti">
+            <h2>Contattaci</h2>
+            <p>Per qualsiasi domanda o informazione, non esitate a contattarci:</p>
+            <p><strong>Maria:</strong> 333-1234567 | maria@email.com</p>
+            <p><strong>Giuseppe:</strong> 333-7654321 | giuseppe@email.com</p>
+            <p><strong>Wedding planner:</strong> Laura Verdi - 333-9876543 | laura@weddingplanner.com</p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Con amore, Maria & Giuseppe</p>
+            <p>Non vediamo l'ora di festeggiare con voi!</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Script per il countdown
+        function updateCountdown() {
+            const weddingDate = new Date("2025-06-12T16:00:00");
+            const now = new Date();
+            const diff = weddingDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("days").textContent = days;
+        }
+        
+        updateCountdown();
+        // Aggiorna il countdown ogni giorno
+        setInterval(updateCountdown, 86400000);
+    </script>
+</body>
+</html>
